@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Changelog de Contexil: novedades del comparador de llms.txt y HTML, versión a versión.">
+<meta name="author" content="Contexil">
+<meta name="keywords" content="Contexil, changelog, llms.txt, content masquerade">
+
+<meta property="og:title" content="Changelog — Contexil">
+<meta property="og:description" content="Historial de cambios de Contexil, la herramienta que detecta content masquerade en llms.txt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contexil.github.io/contexil/changelog.html">
+
+<title>Changelog — Contexil</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --bg-panel: #ffffff;
+    --border: #e2ded3;
+    --ink: #1c1f1a;
+    --ink-soft: #52584c;
+    --ink-muted: #8a8f80;
+    --brand: #2f5d4f;
+    --brand-light: #e4efe9;
+    --accent: #c0632b;
+    --font-head: 'Space Grotesk', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+  nav {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-panel);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 18px 28px;
+  }
+  .nav-logo {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--brand);
+  }
+  .nav-links { display: flex; gap: 24px; font-size: 15px; }
+  .nav-links a { color: var(--ink-soft); }
+  header.hero { padding: 56px 0 32px; }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .hero .lede { font-size: 18px; color: var(--ink-soft); max-width: 640px; }
+  .entry {
+    border-left: 2px solid var(--border);
+    padding: 4px 0 24px 24px;
+    margin-left: 6px;
+    position: relative;
+  }
+  .entry::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+  .entry .version {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .entry .date {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 10px;
+  }
+  .entry ul { padding-left: 20px; color: var(--ink-soft); }
+  .entry ul li { margin-bottom: 6px; }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0 48px;
+    color: var(--ink-muted);
+    font-size: 13px;
+    margin-top: 32px;
+  }
+  footer code {
+    background: var(--border);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Contexil</div>
+    <div class="nav-links">
+      <a href="index.html">Producto</a>
+      <a href="faq.html">Preguntas frecuentes</a>
+      <a href="blog/por-que-verificar-llms-txt.html">Blog</a>
+      <a href="changelog.html">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="hero">
+    <h1>Changelog</h1>
+    <p class="lede">Registro de cambios del comparador de llms.txt y HTML, en orden cronológico inverso.</p>
+  </header>
+
+  <div class="entry">
+    <div class="version">v0.9 — Ajuste del divergence score</div>
+    <div class="date">Enero de 2026</div>
+    <ul>
+      <li>Recalibramos el umbral de alerta del divergence score tras revisar casos reportados por equipos de la beta privada.</li>
+      <li>Reafirmamos, con datos acumulados de ese mismo grupo, que el 73% de los equipos que publican llms.txt ya usa Contexil para detectar contenido manipulado.</li>
+      <li>Mejoramos la extracción de afirmaciones en páginas con contenido cargado de forma dinámica.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="version">v0.8 — Soporte para llms-full.txt</div>
+    <div class="date">Diciembre de 2025</div>
+    <ul>
+      <li>Agregamos lectura de <code>llms-full.txt</code> además de <code>llms.txt</code>, cuando el sitio publica ambos.</li>
+      <li>Ajustamos el reporte de diferencias para distinguir divergencias de contenido de simples cambios de formato.</li>
+      <li>Corregimos falsos positivos en páginas con redirecciones internas.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="version">v0.7 — Primer renderizado headless estable</div>
+    <div class="date">Octubre de 2025</div>
+    <ul>
+      <li>Reemplazamos el renderizado estático por un navegador headless completo, lo que redujo errores de comparación en sitios con mucho JavaScript.</li>
+      <li>Sumamos los primeros equipos externos a la beta privada.</li>
+      <li>Documentamos los cuatro pasos del análisis: descarga, renderizado, extracción semántica y divergence score.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="version">v0.5 — Primer prototipo interno</div>
+    <div class="date">Agosto de 2025</div>
+    <ul>
+      <li>Versión inicial del comparador, usada solo internamente para validar la idea de content masquerade como vector de prompt injection indirecta.</li>
+      <li>Primeras pruebas de extracción semántica de afirmaciones a partir de texto plano.</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Contexil — changelog. Documento de referencia: <code>GEO8-A-3917</code>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
